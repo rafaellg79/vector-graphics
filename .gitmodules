@@ -1,0 +1,3 @@
+[submodule "examples/external/nanosvg"]
+	path = examples/external/nanosvg
+	url = https://github.com/rafaellg79/nanosvg
