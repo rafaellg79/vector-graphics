@@ -25,6 +25,7 @@ set(EXTERNAL
 add_executable(example1
     ${VECTOR_GRAPHICS_SOURCE}
     ${EXTERNAL}
+    examples/common.h
     examples/example1.c
 )
     
@@ -32,5 +33,6 @@ add_executable(example2
     ${VECTOR_GRAPHICS_SOURCE}
     ${EXTERNAL}
     src/exporter.h
+    examples/common.h
     examples/example2.c
 )
