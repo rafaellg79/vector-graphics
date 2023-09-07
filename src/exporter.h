@@ -27,7 +27,7 @@ int realloc_to_fit(string* str, unsigned int new_size){
 }
 
 int append(string* dst, char* src){
-    int src_size = strlen(src);
+    int src_size = (int)strlen(src);
     if (realloc_to_fit(dst, dst->size + src_size))
         return 1;
     strcpy(dst->data + dst->size, src);
@@ -128,7 +128,6 @@ int cell_to_svg_rec(ShortcutNode *cell, string *buffer, int id, int recursion_le
 char * cell_to_svg(ShortcutNode *cell, int id, int recursion_level){
     if (cell == NULL)
         return "";
-    char buffer[256];
     
     BoundingBox BB = cell->BB;
     string svg;

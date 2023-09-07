@@ -33,7 +33,6 @@ int main(int argc, char * argv[]){
     bool dump = false;
     int dump_cell_id = 0;
     real* pattern = NULL;
-    char * file_name;
     int i;
 
     // Simple parsing for example applications do NOT use in real applications
@@ -66,7 +65,7 @@ int main(int argc, char * argv[]){
         fprintf(stderr, "Error reading svg file!");
         return 1;
     }
-    int width = ceil(nsvg_image->width), height = ceil(nsvg_image->height);
+    int width = (int)ceil(nsvg_image->width), height = (int)ceil(nsvg_image->height);
     unsigned int * image = (unsigned int *)malloc(sizeof(unsigned int) * width * height);
 
     if (pattern == NULL) {
@@ -76,7 +75,7 @@ int main(int argc, char * argv[]){
     }
     
     // the depth of a cell with a 1 px^2 area
-    int pixel_depth = fmax(0., ceil(log2(fmax(width, height))));
+    int pixel_depth = (int)fmax(0., ceil(log2(fmax(width, height))));
     if(!max_depth){
         max_depth = pixel_depth;
     }
@@ -136,7 +135,7 @@ int main(int argc, char * argv[]){
     if(dump){
         printf("dumping tree\n");
 
-        int length = strlen(argv[2])+1;
+        int length = (int)strlen(argv[2])+1;
         char * filename = (char *)malloc(sizeof(char) * (length+4));
         char * extension;
         strcpy(filename, argv[2]);
