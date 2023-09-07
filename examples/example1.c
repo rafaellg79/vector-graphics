@@ -56,13 +56,13 @@ int main(int argc, char* argv[]) {
 
     printf("Rendering...\n");
     for (i = 0; i < height; i++) {
+        fprintf(stderr, "\r%.2f%%", 100. * i / height);
         real y = i + 0.5;
         int j;
         for (j = 0; j < width; j++) {
             real x = j + 0.5;
             image[i * width + j] = pack_vec(supersample(tree.root, pattern, num_samples, x, y, white));
         }
-        fprintf(stderr, "\r%.2f%%", 100. * i / height);
     }
     fprintf(stderr, "\r100.00%%");
 
