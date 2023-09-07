@@ -10,6 +10,7 @@ set(VECTOR_GRAPHICS_SOURCE
     src/quadratic.h
     src/bezier.h
     src/curve.h
+    src/paint.h
     src/path.h
     src/filter.h
     src/shortcut_tree.h
